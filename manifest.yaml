@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: wasim
+  name: helloworldnode
+spec:
+  replicas: 1
+  selector:
+   matchLabels:
+     app: helloworldnode
+  template:
+    metadata:
+      labels:
+        app: helloworldnode
+    spec:
+      containers:
+      - name: helloworldnode
+        image: icsbfdacr01.azurecr.io/nodehelloworld:v1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 3000
+      imagePullSecrets:
+      - name: icsbfdev
+      nodeSelector:
+        env: applicationdev
+---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: wasim
+  name: node-service
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+    targetPort: 3000
+    protocol: TCP
+    name: http
+  selector:
+    app: helloworldnode
