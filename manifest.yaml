@@ -24,7 +24,7 @@ spec:
       nodeSelector:
         env: applicationdev
 ---
-apiVersion: v1
+apiVersion: v2
 kind: Service
 metadata:
   namespace: wasim
