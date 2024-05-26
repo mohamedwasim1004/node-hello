@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: helloworldnode
-        image: icsbfdacr01.azurecr.io/nodehelloworld:v2
+        image: icsbfdacr01.azurecr.io/nodehelloworld:vbid
         imagePullPolicy: Always
         ports:
         - containerPort: 3000
