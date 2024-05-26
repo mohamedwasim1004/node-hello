@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: helloworldnode
-        image: icsbfdacr01.azurecr.io/nodehelloworld:v1
+        image: icsbfdacr01.azurecr.io/nodehelloworld:v2
         imagePullPolicy: Always
         ports:
         - containerPort: 3000
@@ -24,7 +24,7 @@ spec:
       nodeSelector:
         env: applicationdev
 ---
-apiVersion: v2
+apiVersion: v1
 kind: Service
 metadata:
   namespace: wasim
