@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata: 
+  namespace: wasim
+  name: creating-configmap
+data:
+  MY_APP: "NodeJs"
+  MY_PORT: "3001"
+  
