@@ -18,7 +18,10 @@ spec:
         image: icsbfdacr01.azurecr.io/nodehelloworld:vbid
         imagePullPolicy: Always
         ports:
-        - containerPort: 3000
+        - containerPort: 3001
+        envFrom:
+        - ConfigMapRef:
+            name: creating-configmap
       imagePullSecrets:
       - name: icsbfdev
       nodeSelector:
@@ -33,7 +36,7 @@ spec:
   type: LoadBalancer
   ports:
   - port: 80
-    targetPort: 3000
+    targetPort: 3001
     protocol: TCP
     name: http
   selector:
