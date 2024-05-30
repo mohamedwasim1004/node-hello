@@ -20,7 +20,7 @@ spec:
         ports:
         - containerPort: 3001
         envFrom:
-        - ConfigMapRef:
+        - configMapRef:
             name: creating-configmap
       imagePullSecrets:
       - name: icsbfdev
